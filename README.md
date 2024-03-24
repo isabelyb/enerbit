@@ -45,6 +45,8 @@ b. Reservación de un hotel: Establecer los siguientes parámetros:
 
 ![testCase2](assets/testCase2.png)
 
+\**In a real test environment, CAPTCHA is typically disabled. Although there are tools available to bypass it, these are not considered within the scope of the test. For this exercise, the CAPTCHA error message is treated as the login error message.
+
 ![testCase3I](assets/testCase3I.png)
 
 ![testCase3II](assets/testCase3II.png)
