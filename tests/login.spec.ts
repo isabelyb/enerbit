@@ -11,7 +11,6 @@ const wrongpassword = process.env.WRONGPASSWORD || '';
 
 test.describe('Login Feature', () => {
  
-
 test('Succesful login', async ({ page }) => {
   const mainPage = new MainPage(page);
   const devExpressPage = new DevExpressPage(page);
@@ -27,6 +26,7 @@ test('Succesful login', async ({ page }) => {
 
 test('Failed login', async ({ page }) => {
     const mainPage = new MainPage(page);
+    
     await mainPage.goto();
     await mainPage.loginHeaderButton.click();
     await mainPage.userInput.fill(username);

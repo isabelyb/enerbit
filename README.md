@@ -9,7 +9,7 @@ herramientas y escenarios:
 
 1. [Frontend](#1-frontend)  
 1.1. [Test Cases](#11-test-cases)  
-1.2. [Test Cases](#12-playwright-project)  
+1.2. [Playwright project](#12-playwright-project)  
 2. [Backend](#backend)  
 
 
@@ -39,7 +39,7 @@ b. Reservación de un hotel: Establecer los siguientes parámetros:
 
 ![testCase1](assets/testCase1.png)
 
-\*Login for this Demo isnot allowed for this demo. As a workarround to demosntrate login test, steps 2* and 3* have been included to redirect to an accessible login feature.
+\*Login is not allowed for this demo. As a workarround to demosntrate login test, steps 2* and 3* have been included to redirect to an accessible login feature.
                                                              
 
 
