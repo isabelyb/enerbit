@@ -1,4 +1,8 @@
 import { expect, type Locator, type Page } from '@playwright/test';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const url = process.env.URL || '';
 
 export class MainPage {
   readonly page: Page;
@@ -23,6 +27,6 @@ export class MainPage {
   }
 
   async goto() {
-    await this.page.goto('https://demos.devexpress.com/rwa/dxhotels/');
+    await this.page.goto(url);
   }
 }
