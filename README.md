@@ -11,6 +11,7 @@ herramientas y escenarios:
 1.1. [Test Cases](#11-test-cases)  
 1.2. [Playwright project](#12-playwright-project)  
 2. [Backend](#backend)  
+2.2. [Karate.js project](#22-karatejs-project)  
 
 
 
@@ -47,14 +48,14 @@ b. Reservación de un hotel: Establecer los siguientes parámetros:
 
 \**In a real test environment, CAPTCHA is typically disabled. Although there are tools available to bypass it, these are not considered within the scope of the test. For this exercise, the CAPTCHA error message is treated as the login error message.
 
-![testCase3I](assets/TestCase3I.png)
+![testCase3I](assets/testCase3I.png)
 
 ![testCase3II](assets/testCase3II.png)
 
 ![testCase3III](assets/testCase3III.png)
 
 
-\**The test concludes here due to login restrictions on this demo site. However, if login were permitted, the test could proceed with test 1, indicating a successful login   
+\**The test concludes here due to login restrictions on this demo site. However, if login were permitted, the test could proceed with test 1, indicating a successful login.
 
 
 ## 1.2 PlayWright Project
@@ -76,16 +77,10 @@ Inside that directory, you can run several commands:
   npx playwright test --debug
     Runs the tests in debug mode.
 
-  npx playwright codegen
-    Auto generate tests with Codegen.
-
-We suggest that you begin by typing:
-
-    npx playwright test
-
-
 ## Backend
 
-### 2. Back-end - Elección libre entre Karate.js y Python-Behave
+### Back-end - Elección libre entre Karate.js y Python-Behave
 
 Realizar la automatización de un servicio CRUD (Create, Read, Update, Delete).
+
+## 2.2 Karate.js Project

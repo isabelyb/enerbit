@@ -44,7 +44,6 @@ export class MainPage {
     this.searchButton = page.locator('#MainContentPlaceHolder_SearchPanel_SearchPanelLayout_SearchButton_CD > span');
    }
 
-  
 
   async goto() {
 
@@ -58,7 +57,6 @@ export class MainPage {
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const monthName = monthNames[date.getMonth()];
     return `${date.getDate()} ${monthName} ${date.getFullYear()}`;
-}  
-
+ }  
 
 }
