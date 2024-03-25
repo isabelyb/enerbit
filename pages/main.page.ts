@@ -15,6 +15,7 @@ export class MainPage {
   readonly errorMessage: Locator;
   readonly searchSection: Locator;
   readonly location: Locator;
+  readonly locationBox: Locator;
   readonly checkIn: Locator;
   readonly checkOut: Locator;
   readonly rooms: Locator;
@@ -33,7 +34,8 @@ export class MainPage {
     this.loginButton = page.locator('#HeaderControl_LogonControl_btnLoginNow_CD > span');
     this.errorMessage = page.locator('#HeaderControl_LogonControl_LoginFormLayout_Captcha_TB_EC');
     this.searchSection = page.locator('#MainContentPlaceHolder_SearchPanel_SearchPanelLayout_0');
-    this.location = page.locator('#MainContentPlaceHolder_SearchPanel_SearchPanelLayout_LocationComboBox_I');
+    this.location = page.locator('#MainContentPlaceHolder_SearchPanel_SearchPanelLayout_LocationComboBox_B-1Img')
+    this.locationBox = page.locator('#MainContentPlaceHolder_SearchPanel_SearchPanelLayout_LocationComboBox_I');
     this.checkIn = page.locator('#MainContentPlaceHolder_SearchPanel_SearchPanelLayout_CheckInDateEdit_I');
     this.checkOut = page.locator('#MainContentPlaceHolder_SearchPanel_SearchPanelLayout_CheckOutDateEdit_I');
     this.rooms = page.locator('#MainContentPlaceHolder_SearchPanel_SearchPanelLayout_RoomsComboBox_I');
@@ -42,16 +44,21 @@ export class MainPage {
     this.searchButton = page.locator('#MainContentPlaceHolder_SearchPanel_SearchPanelLayout_SearchButton_CD > span');
    }
 
+  
 
   async goto() {
 
     await this.page.goto(url);
   }
 
-  async getReservationDate(days: any) {
+  
+  async getReservationDate(days: number) {
     const date = new Date();
+    date.setDate(date.getDate() + days);
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const monthName = monthNames[date.getMonth()];
-    return `${date.getDate()+days} ${monthName} ${date.getFullYear()}`;
+    return `${date.getDate()} ${monthName} ${date.getFullYear()}`;
 }  
+
+
 }

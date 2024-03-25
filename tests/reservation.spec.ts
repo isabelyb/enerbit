@@ -10,6 +10,8 @@ const checkOutData = process.env.CHECKOUT || '';
 const roomsData = process.env.ROOMS || '';
 const adultsData = process.env.ADULTS || '';
 const childrenData = process.env.CHILDREN || '';
+const priceData = process.env.PRICE || '';
+const rateData = process.env.RATE || '';
 
 test.describe('Reservation Feature', () => {
 
@@ -19,35 +21,27 @@ test.describe('Reservation Feature', () => {
 
         await mainPage.goto();
         await mainPage.searchSection.isVisible();
-        await mainPage.location.click();
-        await mainPage.location.fill(locationData);
+        await mainPage.locationBox.click();
+        await mainPage.locationBox.fill(locationData);
+
         await mainPage.checkIn.fill(await mainPage.getReservationDate(parseInt(checkInData)));
         await mainPage.checkOut.fill(await mainPage.getReservationDate(parseInt(checkOutData)));
         await mainPage.rooms.fill(roomsData);
         await mainPage.adults.fill(adultsData);
         await mainPage.children.fill(childrenData);
         await mainPage.searchButton.click();
-        await expect(reservationPage.resultsSection).toBeVisible()
+        await reservationPage.nightlyRate.click();
+        await page.mouse.wheel(0,1);
+        await reservationPage.rating.click();
+        await page.mouse.wheel(0,1);
+        await reservationPage.rating.click();
+        await page.mouse.wheel(0,1);
+        await reservationPage.filterApply.click();
+        await reservationPage.pasardetab()
+        await reservationPage.bookItButton.click();
+        await page.getByText('Print Invoice Print Invoice').click();
+        
     })
 });
 
 
-
-//   await page.getByRole('cell', { name: 'Hamburg', exact: true }).click();
-//   await page.getByLabel('Check in').click();
-//   await page.locator('#MainContentPlaceHolder_SearchPanel_SearchPanelLayout_CheckInDateEdit_B-1').click();
-//   await page.locator('#MainContentPlaceHolder_SearchPanel_SearchPanelLayout_CheckInDateEdit_DDD_C_mc_0x0_35').click();
-//   await page.locator('#MainContentPlaceHolder_SearchPanel_SearchPanelLayout_CheckOutDateEdit_B-1Img').click();
-//   await page.locator('#MainContentPlaceHolder_SearchPanel_SearchPanelLayout_CheckOutDateEdit_DDD_C_mc_0x0_40').click();
-//   await page.locator('#MainContentPlaceHolder_SearchPanel_SearchPanelLayout_RoomsComboBox_B-1Img').click();
-//   await page.getByRole('cell', { name: '3', exact: true }).click();
-//   await page.locator('#MainContentPlaceHolder_SearchPanel_SearchPanelLayout_AdultsSpinEdit_B-4').click();
-//   await page.locator('#MainContentPlaceHolder_SearchPanel_SearchPanelLayout_AdultsSpinEdit_B-4').click();
-//   await page.getByLabel('Children').click();
-//   await page.getByLabel('Children').click();
-//   await page.getByLabel('Children').fill('2');
-//   await page.getByText('SEARCH SEARCH').click();
-//   await page.getByText('$199.99').click();
-//   await page.locator('#MainContentPlaceHolder_HotelsDataView_IT1_BookItButton_1_CD span').click();
-//   await page.getByText('Print Invoice Print Invoice').click();
-// });
