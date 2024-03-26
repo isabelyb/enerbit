@@ -14,7 +14,6 @@ herramientas y escenarios:
 2.2. [Karate.js project](#22-karatejs-project)  
 
 
-
 ## 1 Frontend
 
 ### DxHotel - Playwright TS
@@ -43,7 +42,6 @@ b. Reservación de un hotel: Establecer los siguientes parámetros:
 \*Login is not allowed for this demo. As a workarround to demosntrate login test, steps 2* and 3* have been included to redirect to an accessible login feature.
                                                              
 
-
 ![testCase2](assets/testCase2.png)
 
 \**In a real test environment, CAPTCHA is typically disabled. Although there are tools available to bypass it, these are not considered within the scope of the test. For this exercise, the CAPTCHA error message is treated as the login error message.
@@ -60,22 +58,26 @@ b. Reservación de un hotel: Establecer los siguientes parámetros:
 
 ## 1.2 PlayWright Project
 
-Inside that directory, you can run several commands:
+### Prerequisites
 
-  npx playwright test
-    Runs the end-to-end tests.
+* node >= 16
+* npm
+* Playwright
 
-  npx playwright test --ui
-    Starts the interactive UI mode.
+### To install:
 
-  npx playwright test --project=chromium
-    Runs the tests only on Desktop Chrome.
+1. `Git Clone git@github.com:isabelyb/enerbit.git` To clone the repository in your local machine.
+2. `npm i` To install dependecies.
+3. `npx playwright install` To install Playwright.
 
-  npx playwright test example
-    Runs the tests in a specific file.
+### To run tests:
 
-  npx playwright test --debug
-    Runs the tests in debug mode.
+* `npx playwright test` Runs all tests.
+* `npx playwright test login` Runs just the login test.
+* `npx playwright test reservation` Runs just the reservation test.
+* `npx playwright test --debug` Runs the tests in debug mode.
+
+Note: The .env is shared in the repository to allow runs the project.
 
 ## Backend
 
